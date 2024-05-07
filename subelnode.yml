@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+
+  subelnode:
+    container_name: subelnode
+    image: nodered/node-red:latest
+    restart: always
+    ports:
+      - 2000:1880
+    volumes:
+      - ./subelnode/:/data
