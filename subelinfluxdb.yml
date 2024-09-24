@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  influxdb:
+    image: influxdb:2
+    container_name: influxdb2
+    ports:
+      - "8086:8086"
+    restart: always
+    volumes:
+      - influxdb2-data:/var/lib/influxdb2
+      - influxdb2-config:/etc/influxdb2        
+    environment:
+      TZ: "America/Lima"
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: subeladmin
+      DOCKER_INFLUXDB_INIT_PASSWORD: T0r0m0ch023$
+      DOCKER_INFLUXDB_INIT_ORG: subel_desarrollador
+      DOCKER_INFLUXDB_INIT_BUCKET: pruebadb
+volumes:
+  influxdb2-data:
+  influxdb2-config:
